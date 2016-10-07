@@ -1,0 +1,44 @@
+﻿body {
+    background-color:aqua;
+}
+
+html{
+    font-size: 16px;
+    font-family:Britannic, sans-serif;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+li{
+    background: linear-gradient(to bottom, #cdcdcd, #ffffff);
+    border:dashed;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+footer{
+    clear: both;
+    background-color:black;
+    color:white;
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+}
+@media only screen and (min-width: 800px) {
+    nav {
+        width: 25%;
+        max-width: 300px;
+        float: left;
+    }
+
+    main {
+        width: 75%;
+        float: left;
+    }
+}
