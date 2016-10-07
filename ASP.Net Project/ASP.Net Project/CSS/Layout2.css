@@ -1,7 +1,7 @@
 ﻿body {
     background-color:aqua;
     max-width: 1000px;
-    margin: 0, 0, 0, 0;
+    margin: 0 auto;
 
 }
 
@@ -13,7 +13,7 @@ html{
 
 nav ul{
     list-style-type:none;
-    margin: 0, 0, 0, 0;
+    margin: 0;
     padding: 0;
 }
 
@@ -22,7 +22,7 @@ nav ul li{
     width: calc(100% / 4);
     box-sizing:border-box;
     border: 1px solid;
-    border-color:azure;
+    border-color:black;
     float:left;
 }
 
