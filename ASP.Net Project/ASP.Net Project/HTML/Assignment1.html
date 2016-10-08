@@ -2,30 +2,69 @@
 <html lang="en-gb">
 <head>
     <title>Assignment 1</title>
-	<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="\CSS\DefaultStyles.css" />
 </head>
 <body>
     <header>
 
     </header>
     <main>
-        <form>
-            <label id="uxName">Name:</label>
+        <form action="http://www.oit.edu/cst465" method="post">
+            <label for="uxName">Name:</label>
             <input id="uxName" type="text" name="Name" />
             <br/>
-            <br />
-            <label id="uxEmailAddress">Email Address:</label>
-            <input type="text" name="EmailAddress"/>
             <br/>
-            <br />
-            <label id="uxUserType">User Type:</label>
-            <select name="UserType">
+            <label for="uxEmailAddress">Email Address:</label>
+            <input id="uxEmailAddress" type="text" name="EmailAddress"/>
+            <br/>
+            <br/>
+            <label for="uxUserType">User Type:</label>
+            <select id="uxUserType" name="UserType">
                 <option value="clear">--Select--</option>
                 <option value="Student">Student</option>
                 <option value="Faculty/Staff">Faculty/Staff</option>
             </select>
             <br/>
-
+            <br/>
+            <label for="uxHobby">Hobbies:</label>
+            <input id="uxHobby" type="text" name="Hobby" />
+            <br />
+            <br />
+            <label for="uxBand">Band:</label>
+            <input id="uxBand" type="text" name="Band" />
+            <br />
+            <br />
+            <label for="uxBiography">Biography:</label>
+            <textarea id="uxBiography" name="Biography" rows="4" cols="50"></textarea>
+            <br />
+            <br />
+            <!--Table here-->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course Prefix</th>
+                        <th>Course Number</th>
+                        <th>Course Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" id="uxCoursePrefix" name="CoursePrefix"/>
+                        </td>
+                        <td>
+                            <input type="text" id="uxCourseNumber" name="CourseNumber" />
+                        </td>
+                        <td>
+                            <input type="text" id="uxCourseDescription" name="CourseDescription" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br/>
+            <br/>
+            <input type="hidden" id="uxNickname" name="Nickname" value="Bryan"/>
+            <input type="submit" id="uxSubmit" value="Save Profile">
         </form>
     </main>
     <nav id="uxBlogList">
