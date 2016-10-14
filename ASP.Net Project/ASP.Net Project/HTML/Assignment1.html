@@ -2,15 +2,69 @@
 <html lang="en-gb">
 <head>
     <title>Assignment 1</title>
-	<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="\CSS\DefaultStyles.css" />
 </head>
 <body>
     <header>
-
+        Welcome to a basic info page
     </header>
     <main>
-        <form>
-            
+        <form action="http://www.oit.edu/cst465" method="post">
+            <label for="uxName">Name:</label>
+            <input id="uxName" type="text" name="Name" />
+            <br/>
+            <br/>
+            <label for="uxEmailAddress">Email Address:</label>
+            <input id="uxEmailAddress" type="text" name="EmailAddress"/>
+            <br/>
+            <br/>
+            <label for="uxUserType">User Type:</label>
+            <select id="uxUserType" name="UserType">
+                <option value="clear">--Select--</option>
+                <option value="Student">Student</option>
+                <option value="Faculty/Staff">Faculty/Staff</option>
+            </select>
+            <br/>
+            <br/>
+            <label for="uxHobby">Hobbies:</label>
+            <input id="uxHobby" type="text" name="Hobby" />
+            <br />
+            <br />
+            <label for="uxBand">Band:</label>
+            <input id="uxBand" type="text" name="Band" />
+            <br />
+            <br />
+            <label for="uxBiography">Biography:</label>
+            <textarea id="uxBiography" name="Biography" rows="4" cols="50"></textarea>
+            <br />
+            <br />
+            <!--Table here-->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course Prefix</th>
+                        <th>Course Number</th>
+                        <th>Course Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" id="uxCoursePrefix" name="CoursePrefix"/>
+                        </td>
+                        <td>
+                            <input type="text" id="uxCourseNumber" name="CourseNumber" />
+                        </td>
+                        <td>
+                            <input type="text" id="uxCourseDescription" name="CourseDescription" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br/>
+            <br/>
+            <input type="hidden" id="uxNickname" name="Nickname" value="Bryan"/>
+            <input type="submit" id="uxSubmit" value="Save Profile">
         </form>
     </main>
     <nav id="uxBlogList">
@@ -21,10 +75,37 @@
         </ul>
     </nav>
     <section>
-
+        <h2>A brief poem:</h2>
+        <p>Once it smiled a silent dell
+Where the people did not dwell;
+They had gone unto the wars,
+Trusting to the mild-eyed stars,
+Nightly, from their azure towers,
+To keep watch above the flowers,
+In the midst of which all day
+The red sunlight lazily lay.
+Now each visitor shall confess
+The sad valley's restlessness.
+Nothing there is motionless-
+Nothing save the airs that brood
+Over the magic solitude.
+Ah, by no wind are stirred those trees
+That palpitate like the chill seas
+Around the misty Hebrides!
+Ah, by no wind those clouds are driven
+That rustle through the unquiet Heaven
+Uneasily, from morn till even,
+Over the violets there that lie
+In myriad types of the human eye-
+Over the lilies there that wave
+And weep above a nameless grave!
+They wave:- from out their fragrant tops
+Eternal dews come down in drops.
+They weep:- from off their delicate stems
+Perennial tears descend in gems.</p>
     </section>
     <footer>
-
+        <label>© 2016 Ryan Williams. All rights reserved.</label>
     </footer>
 
 </body>
