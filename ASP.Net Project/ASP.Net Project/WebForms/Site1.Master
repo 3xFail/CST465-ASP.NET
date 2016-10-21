@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ASP.Net_Project.WebForms.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form2" runat="server">
+    <div>
+        <nav runat="server">
+            <a href="http://www.w3schools.com/ASP/default.asp">W3 Schools</a>
+            <a href="https://www.asp.net/">ASP.NET</a>
+            <a href="https://www.asp-usa.com/">ASP.NET USA</a>
+        </nav>
+        <asp:ContentPlaceHolder ID="uxContentHolderNav" runat="server">
+
+        </asp:ContentPlaceHolder>
+        <main runat="server">
+            <asp:ContentPlaceHolder ID="uxContentPlaceHolderMain" runat="server">
+
+        </asp:ContentPlaceHolder>
+        </main>
+    </div>
+    </form>
+</body>
+</html>

@@ -103,12 +103,16 @@
     </Content>
     <Content Include="WebForms\Contact.aspx" />
     <Content Include="WebForms\Default.aspx" />
+    <Content Include="WebForms\ValidatedForm.aspx" />
+    <Content Include="WebForms\ValidatedFormOutput.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="WebForms\RequiredTextBox.ascx" />
+    <Content Include="WebForms\Site1.Master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\DefaultStyles.css" />
@@ -136,6 +140,34 @@
     </Compile>
     <Compile Include="WebForms\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\RequiredTextBox.ascx.cs">
+      <DependentUpon>RequiredTextBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\RequiredTextBox.ascx.designer.cs">
+      <DependentUpon>RequiredTextBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\ValidatedForm.aspx.cs">
+      <DependentUpon>ValidatedForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\ValidatedForm.aspx.designer.cs">
+      <DependentUpon>ValidatedForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\ValidatedFormOutput.aspx.cs">
+      <DependentUpon>ValidatedFormOutput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\ValidatedFormOutput.aspx.designer.cs">
+      <DependentUpon>ValidatedFormOutput.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
