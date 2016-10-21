@@ -29,19 +29,19 @@ namespace ASP.Net_Project.WebForms
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
-            uxEventOutput.Text = "OnInit<br />";
+            uxEventOutput.Text += "OnInit<br />";
         }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            uxEventOutput.Text = "Onload<br />";
+            uxEventOutput.Text += "Onload<br />";
         }
 
         protected override void OnPreRender(EventArgs e)
         {
             base.OnPreRender(e);
-            uxEventOutput.Text = "OnPreRender<br />";
+            uxEventOutput.Text += "OnPreRender<br />";
         }
     }
 }

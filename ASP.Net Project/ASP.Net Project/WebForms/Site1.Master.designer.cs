@@ -13,6 +13,15 @@ namespace ASP.Net_Project.WebForms {
     public partial class Site1 {
         
         /// <summary>
+        /// Pagehead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Pagehead;
+        
+        /// <summary>
         /// form2 control.
         /// </summary>
         /// <remarks>

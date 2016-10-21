@@ -17,7 +17,7 @@ namespace ASP.Net_Project.WebForms
         public string LabelText
         {
             get { return this.uxLabel.Text; }
-            set { this.uxLabel.Text = value; this.uxValidator.ErrorMessage = value + "required"; }
+            set { this.uxLabel.Text = value; this.uxValidator.ErrorMessage = value + " required"; }
         }
 
         public string Value
