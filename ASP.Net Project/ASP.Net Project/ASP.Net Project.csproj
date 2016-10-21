@@ -177,7 +177,6 @@
     <Content Include="WebForms\Default.aspx" />
     <Content Include="WebForms\ValidatedForm.aspx" />
     <Content Include="WebForms\ValidatedFormOutput.aspx" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\web.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

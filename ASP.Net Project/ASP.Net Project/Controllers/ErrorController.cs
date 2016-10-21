@@ -13,5 +13,15 @@ namespace ASP.Net_Project.Controllers
         {
             return View();
         }
+
+        public ActionResult NotFound()
+        {
+            return View();
+        }
+
+        public ActionResult ServerError()
+        {
+            return View();
+        }
     }
 }
