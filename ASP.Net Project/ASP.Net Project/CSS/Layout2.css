@@ -1,5 +1,5 @@
 ﻿body {
-    background-color:aqua;
+    background-color: #30E3E3;
     max-width: 1000px;
     margin: 0 auto;
 
@@ -8,7 +8,7 @@
 html{
     font-size: 16px;
     font-family:Courier New , sans-serif;
-    background-image:url(http://oregontechcdn.azureedge.net/img/bg/bg-tile.jpg);
+    background-color: #30A0A0;
 }
 
 nav ul{
@@ -28,7 +28,21 @@ nav ul li{
 
 header,footer{
     border: 2px solid;
-    border-color: white;
-    background-color: gold;
+    border-color: black;
+    background-color: #30C4C4;
     color:black;
+}
+
+.header_img img{
+    zoom: 2;  
+
+    display: block;
+    margin: auto;
+
+    height: auto;
+    max-height: 100%;
+
+    width: auto;
+    max-width: 100%;
+
 }

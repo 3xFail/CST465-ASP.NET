@@ -156,6 +156,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="CSS\Layout1.css" />
     <Content Include="CSS\Layout2.css" />
+    <Content Include="CSS\MainStyle.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="HTML\Layout.html" />
     <Content Include="packages.config" />

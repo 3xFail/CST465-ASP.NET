@@ -1,24 +1,37 @@
-﻿@{
-    Layout = null;
-}
-
-
-
+﻿
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/CSS/MainStyle.css")" rel="stylesheet" type="text/css" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
     <header>
         <div class="header_image">
-            <img src="http://www.musikchan.com/music/src/145452121224.jpg" />
-            <h2>The Janitors Pocket</h2>
+            <img id="header_img" src="http://i.imgur.com/8igjXay.jpg" />
+            <h1>The Janitors Pocket</h1>
+            <h2>It's not illegal if we dont get caught ;)</h2>
         </div>   
         @RenderSection("header", required:false)
     </header>
+    <nav>
+        <ul>
+            <li>
+                @Html.ActionLink("Home", "Index", "Home", null, new { style = "text-decoration:inherit" })
+            </li>
+            <li>
+                @Html.ActionLink("About", "Index", "About", null, new { style = "text-decoration:inherit;" })
+            </li>
+            <li>
+                @Html.ActionLink("Contact", "Index", "Contact", null, new { style = "text-decoration:inherit;" })
+            </li>
+            <li>
+                @Html.ActionLink("Blogs", "Index", "Blog", null, new { style = "text-decoration:inherit;" })
+            </li>
+        </ul>
+    </nav>
     <main>
         @RenderBody()
     </main>
