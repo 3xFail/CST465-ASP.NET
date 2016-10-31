@@ -159,6 +159,7 @@
     <Content Include="CSS\MainStyle.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="HTML\Layout.html" />
+    <Content Include="img\headerimage.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
