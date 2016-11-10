@@ -1,8 +1,11 @@
-﻿
-@{
-    ViewBag.Title = "_BlogPostLinkList";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿@model IEnumerable<BlogPost>
 
-<h2>_BlogPostLinkList</h2>
+
+<h2>Blog Post List</h2>
+
+@foreach(BlogPost bp in Model)
+{
+    @Html.ActionLink(bp.Title, "Display", new { id = bp.ID});
+    <div>@bp.Timestamp</div>
+}
 
