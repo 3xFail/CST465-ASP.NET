@@ -1,8 +1,26 @@
-﻿
+﻿@model BlogPostModel
 @{
-    ViewBag.Title = "BlogPostModel";
+    
     
 }
 
-<h2>BlogPostModel</h2>
+<h2>Edit post</h2>
 
+<section>
+    @Html.LabelFor(model => model.Title, null, new { style = "font-weight:bold; font-size:14px;" })
+    @Html.TextBoxFor(model => model.Title, new { style = "width:inherit" })
+</section>
+
+<section>
+    @Html.LabelFor(model => model.Content)
+    @Html.ValidationMessageFor(model => model.Title, null)
+    @Html.TextAreaFor(model => model.Content, new { style = "width:inherit" })
+    
+</section>
+
+<section>
+    @Html.LabelFor(model => model.Author)
+    @Html.ValidationMessageFor(model => model.Author)
+    @Html.TextBoxFor(model => model.Author, new { style = "width:inherit" })
+    
+</section>

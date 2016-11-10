@@ -1,0 +1,17 @@
+﻿@model BlogPost
+@{
+    ViewBag.Title = "BlogPost";
+}
+
+<h2>@Model.Title </h2>
+
+<p>
+    @Model.Content
+</p>
+
+<div class="blog_info">
+    By @Model.Author at @Model.Timestamp
+    @Html.ActionLink("Edit", "Edit", Model)
+</div>
+
+

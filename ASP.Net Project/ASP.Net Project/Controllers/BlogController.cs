@@ -75,5 +75,11 @@ namespace ASP.Net_Project.Controllers
             else { return View(model); }
             return RedirectToAction("Index");
         }
+
+        public ActionResult Display(int id)
+        {
+            BlogPost entry = blog_repo.Get(id);
+            return View(entry);
+        }
     }
 }
