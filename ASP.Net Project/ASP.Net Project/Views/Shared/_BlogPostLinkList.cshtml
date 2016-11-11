@@ -8,6 +8,6 @@
     foreach (BlogPost bp in Model)
     {
         @Html.ActionLink(bp.Title, "Display", new { id = bp.ID });
-        <div>@bp.Timestamp</div>
+        <div>@bp.Timestamp.ToLocalTime()</div>
     }
 }
