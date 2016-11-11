@@ -3,9 +3,11 @@
 
 <h2>Blog Post List</h2>
 
-@foreach(BlogPost bp in Model)
+@if (Model != null)
 {
-    @Html.ActionLink(bp.Title, "Display", new { id = bp.ID});
-    <div>@bp.Timestamp</div>
+    foreach (BlogPost bp in Model)
+    {
+        @Html.ActionLink(bp.Title, "Display", new { id = bp.ID });
+        <div>@bp.Timestamp</div>
+    }
 }
-

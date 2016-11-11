@@ -9,9 +9,9 @@ namespace ASP.Net_Project.Controllers
 {
     public class BlogController : Controller
     {
-        public BlogController()
+        public BlogController(IDataEntityRepository<BlogPost> blog)
         {
-            this.blog_repo = new BlogDBRepository();
+            this.blog_repo = blog;
         }
 
 

@@ -7,6 +7,9 @@ nav{
     position:relative;
     top:auto;
 }
+img{
+    width:100%
+}
 main{
     width:75%;
     float: right;
