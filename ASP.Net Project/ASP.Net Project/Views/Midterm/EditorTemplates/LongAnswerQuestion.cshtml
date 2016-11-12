@@ -1,0 +1,10 @@
+﻿@model ASP.Net_Project.Models.Test.LongAnswerQuestion
+
+
+
+<div>
+    <h2>@Html.Raw(Model.Question)</h2>
+    @Html.TextAreaFor(Model => Model.Answer)
+    @Html.HiddenFor(Model => Model.ID)
+    <div>@Html.ValidationMessageFor(Model => Model.Answer)</div>
+</div>

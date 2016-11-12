@@ -54,6 +54,17 @@ section{
     font-family:'Times New Roman', Times, serif;
 }
 
+
+.field-validation-error
+{
+    color: red;
+}
+
+.validation-summary-errors
+{
+    color: Red;
+}
+
 #blog_title_edit{
 
 }

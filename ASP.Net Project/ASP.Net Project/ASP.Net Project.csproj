@@ -188,6 +188,7 @@
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="App_Data\data_file.json" />
+    <Content Include="JSON\Midterm.json" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -220,6 +221,12 @@
     <Content Include="Views\Shared\_BlogPostLinkList.cshtml" />
     <Content Include="Views\Blog\Display.cshtml" />
     <Content Include="Views\Blog\DisplayTemplates\BlogPost.cshtml" />
+    <Content Include="Views\Midterm\TakeTest.cshtml" />
+    <Content Include="Views\Midterm\DisplayResults.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\TrueFalseQuestion.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\ShortAnswerQuestion.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\LongAnswerQuestion.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\MultipleChoiceQuestion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -246,6 +253,11 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Code\DataObjects\BlogPost.cs" />
+    <Compile Include="Controllers\MidtermController.cs" />
+    <Compile Include="Models\Test\LongAnswerQuestion.cs" />
+    <Compile Include="Models\Test\MultipleChoiceQuestion.cs" />
+    <Compile Include="Models\Test\ShortAnswerQuestion.cs" />
+    <Compile Include="Models\Test\TestQuestion.cs" />
     <Compile Include="Code\ExtensionMethods\BlogRepositoryExtensions.cs" />
     <Compile Include="Code\Interfaces\IDataEntity.cs" />
     <Compile Include="Code\Interfaces\IDataEntityRepository.cs" />
@@ -260,6 +272,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Blog\BlogPostModel.cs" />
+    <Compile Include="Models\Test\TrueFalseQuestion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebForms\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

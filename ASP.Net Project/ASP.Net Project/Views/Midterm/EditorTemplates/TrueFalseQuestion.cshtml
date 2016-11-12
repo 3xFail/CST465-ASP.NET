@@ -1,0 +1,12 @@
+﻿@model ASP.Net_Project.Models.Test.TrueFalseQuestion
+
+
+
+<div>
+    <h2>@Html.Raw(Model.Question)</h2>
+    @Html.DropDownListFor(Model => Model.Answer, new List<SelectListItem>() { new SelectListItem() { Text = "True", Value = "true" }, new SelectListItem() { Text = "False", Value = "fSalse" } })
+    @Html.HiddenFor(Model => Model.ID)
+    <div>@Html.ValidationMessageFor(Model => Model.Answer)</div>
+</div>
+
+

@@ -1,0 +1,15 @@
+﻿@model ASP.Net_Project.Models.Test.MultipleChoiceQuestion
+
+<div>
+    <h2>@Html.Raw(Model.Question)</h2>
+
+    @for (int i = 0; i < Model.Choices.Count; i++)
+    {
+        @Html.RadioButtonFor(Model => Model.Answer, Model.Choices[i], new { @id = Model.Choices[i] })
+        @Html.Label(Model.Choices[i])
+
+    }
+
+    @Html.HiddenFor(Model => Model.ID)
+    <div>@Html.ValidationMessageFor(Model => Model.Answer)</div>
+</div>
