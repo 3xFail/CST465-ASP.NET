@@ -10,9 +10,10 @@ using System.Web;
 //regulare expression is required to validate true or false
 namespace ASP.Net_Project.Models.Test
 {
-    public class TrueFalseQuestion: TestQuestion
+    public class TrueFalseQuestion : TestQuestion
     {
         [Required]
+        [RegularExpression("(?i:True|False)")]
         public override string Answer
         {
             get
@@ -22,10 +23,9 @@ namespace ASP.Net_Project.Models.Test
 
             set
             {
-                if(Regex.IsMatch(value, "^(?:tru|fals)e$"))
-                {
+               
                     base.Answer = value;
-                }
+                
                 
             }
         }

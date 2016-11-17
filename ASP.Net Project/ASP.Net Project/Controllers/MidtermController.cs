@@ -26,13 +26,13 @@ namespace ASP.Net_Project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult TakeTest(string fake)
+        public ActionResult TakeTest(List<TestQuestion> answers)
         {
             List<TestQuestion> questions = GetQuestionList();
 
             foreach(TestQuestion q in questions)
             {
-                q.Answer = Request.QueryString[q.ID.ToString()];
+                q.Answer = answers[q.ID - 1].Answer; ;
             }
             if (ModelState.IsValid)
             {
