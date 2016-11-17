@@ -21,6 +21,13 @@ namespace ASP.Net_Project.Controllers
             return View(this.blog_repo.GetList());
         }
 
+
+        [HttpPost]
+        public ActionResult Index(string filter)
+        {
+            List<BlogPost> filtered_list = blog_repo.GetListByContent(filter);
+            return View(filtered_list);
+        }
         private IDataEntityRepository<BlogPost> blog_repo;
 
         public ActionResult Add()

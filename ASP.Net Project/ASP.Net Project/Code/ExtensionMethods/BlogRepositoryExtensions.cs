@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ASP.Net_Project.Code.ExtensionMethods
+namespace ASP.Net_Project
 {
     public static class BlogRepositoryExtensions
     {
-        /*public static List<BlogPost> GetListByContent(this IDataEntityRepository<BlogPost> blog, string filter)
+        public static List<BlogPost> GetListByContent(this IDataEntityRepository<BlogPost> blog, string filter)
         {
-            return blog.Where(s => s.Title.contains(filter) || s.Author.Contains(filter) || s.Content.Contains(filter));
-        }*/
+            List<BlogPost> output = new List<BlogPost>();
+            output.AddRange(blog.GetList().Where(Model => Model.Content.Contains(filter) || Model.Title.Contains(filter) || Model.Author.Contains(filter)));
+            return output;
+        }
     }
 }

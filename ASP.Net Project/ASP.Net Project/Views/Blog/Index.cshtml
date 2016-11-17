@@ -7,4 +7,12 @@
 <h1>Blog Posts</h1>
 @Html.Partial("_BlogPostLinkList")
 
-@Html.ActionLink("Add new post", "Add")
+<div>
+    @Html.ActionLink("Add new post", "Add")
+
+    <form method="post">
+        <label>Filter By:</label>
+        <input type="text" id="filter" name="filter"/>
+        <button type="submit">Submit</button>
+    </form>
+</div>
