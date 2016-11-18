@@ -79,15 +79,23 @@ namespace ASP.Net_Project.Code.Repositories
             else
             {
                 //new entity
-                entity.ID = id_count;
+                if (posts.Count() == 0)
+                {
+                    entity.ID = 1;
+                }
+                else
+                {
+                    entity.ID = posts.Max(post => post.ID) + 1;
+                }
+
                 entity.Timestamp = DateTime.UtcNow;
                 posts.Add(entity);
-                id_count++;
+                
             }
             var writer = new StreamWriter(path);
             writer.Write(serial.Serialize(posts));
             writer.Close();
         }
-        private static int id_count = 1; 
+        
     }
 }
