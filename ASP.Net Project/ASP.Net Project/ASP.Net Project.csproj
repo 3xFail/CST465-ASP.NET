@@ -315,6 +315,13 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Code\DataObjects\BlogPost.cs" />
+    <Compile Include="Code\DataObjects\Category.cs" />
+    <Compile Include="Code\DataObjects\Product.cs" />
+    <Compile Include="Code\Interfaces\ICategoryEntity.cs" />
+    <Compile Include="Code\Interfaces\ICategoryRepo.cs" />
+    <Compile Include="Code\Interfaces\IProductEntity.cs" />
+    <Compile Include="Code\Interfaces\IProductRepo.cs" />
+    <Compile Include="Code\Repositories\CategoryRepo.cs" />
     <Compile Include="Controllers\MidtermController.cs" />
     <Compile Include="Models\Account\AccountViewModels.cs" />
     <Compile Include="Models\Account\ForgotPasswordViewModel.cs" />
