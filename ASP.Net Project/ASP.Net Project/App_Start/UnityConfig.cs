@@ -18,6 +18,8 @@ namespace ASP.Net_Project
             // e.g. container.RegisterType<ITestService, TestService>();
 
             container.RegisterType<IDataEntityRepository<BlogPost>, BlogFileRepository>();
+            container.RegisterType<IProductRepo<Product>, ProductRepo>();
+            container.RegisterType<ICategoryRepo<Category>, CategoryRepo>();
             container.RegisterType<DbContext, ApplicationDbContext>(new HierarchicalLifetimeManager());
             container.RegisterType<UserManager<ApplicationUser>>(new HierarchicalLifetimeManager());
             container.RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(new HierarchicalLifetimeManager());
