@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ASP.Net_Project.Code.Interfaces
+namespace ASP.Net_Project
 {
-    interface IProductRepo<T> where T: IProductEntity
+    public interface IProductRepo<T> where T: IProductEntity
     {
         T Get(int id);
         void Save(T entity);
         List<T> GetList();
+        void Remove(int id);
     }
 }

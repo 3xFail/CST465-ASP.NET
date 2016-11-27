@@ -37,10 +37,62 @@ namespace ASP.Net_Project
 
         public List<Category> GetList()
         {
-            return;
+            List<Category> list = new List<Category>();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Aura"].ConnectionString))
+            {
+                using (SqlCommand com = new SqlCommand())
+                {
+                    com.Connection = con;
+                    com.CommandText = "EXECUTE Cat_GetList";
+                    com.Connection.Open();
+                    using (SqlDataReader read = com.ExecuteReader())
+                    {
+                        while(read.Read())
+                        {
+                            Category category = new Category();
+                            category.ID = (int)read["ID"];
+                            category.CatagoryName = read["CategoryName"].ToString();
+                            list.Add(category);
+                        }
+                    }
+                    com.Connection.Close();
+                }
+            }
+
+                return list;
         }
 
         public void Save(Category entity)
+        {
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Aura"].ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = System.Data.CommandType.Text;
+
+                    if (entity.ID > 0)
+                    {
+                        // needs to update
+                        command.CommandText = "EXECUTE Cat_Update @ID, @CategoryName";
+                        command.Parameters.AddWithValue("@ID", entity.ID);
+                    }
+                    else
+                    {
+                        //needs to insert
+                        command.CommandText = "EXECUTE Cat_Add @CategoryName";
+
+                    }
+
+                    command.Parameters.AddWithValue("@CategoryName", entity.CatagoryName);
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    //command.Connection.Close();
+                }
+            }
+        }
+
+        public void Remove(int ID)
         {
 
         }

@@ -10,5 +10,6 @@ namespace ASP.Net_Project
         T Get(int id);
         void Save(T entity);
         List<T> GetList();
+        void Remove(int id);
     }
 }

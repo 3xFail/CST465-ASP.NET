@@ -322,7 +322,12 @@
     <Compile Include="Code\Interfaces\IProductEntity.cs" />
     <Compile Include="Code\Interfaces\IProductRepo.cs" />
     <Compile Include="Code\Repositories\CategoryRepo.cs" />
+    <Compile Include="Code\Repositories\ProductRepo.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\MidtermController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Models\Account\AccountViewModels.cs" />
     <Compile Include="Models\Account\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\Identity\ApplicationDBContext.cs" />
@@ -395,7 +400,11 @@
       <DependentUpon>ValidatedFormOutput.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Category\" />
+    <Folder Include="Views\Image\" />
+    <Folder Include="Views\Product\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

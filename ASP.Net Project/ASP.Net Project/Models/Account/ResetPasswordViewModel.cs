@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 
 namespace ASP.Net_Project
+{ 
     public class ResetPasswordViewModel
     {
         [Required]

@@ -8,20 +8,20 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using CST465_MVC.Models;
+using ASP.Net_Project;
 
-namespace CST465_MVC.Controllers
+namespace ASP.Net_Project.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        
+
 
         public AccountController()
         {
-            
+
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -106,8 +106,8 @@ namespace CST465_MVC.Controllers
         public ActionResult ResendConfirmationEmail()
         {
             string email = (string)TempData["Email"];
-            if(!string.IsNullOrEmpty(email))
-            { 
+            if (!string.IsNullOrEmpty(email))
+            {
                 return View((object)email);
             }
             else
