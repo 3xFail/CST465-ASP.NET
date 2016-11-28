@@ -51,8 +51,7 @@
         <br />
         <input type="file" id="inputimage" name="img"/>
         @{ 
-            @HtmlDocument.getElementById("inputimage");
-            Model.ProductImage = File.ReadAllBytes();
+            Model.ProductImage = File.ReadAllBytes("inputimage");
         }
     </div>
 </div>
