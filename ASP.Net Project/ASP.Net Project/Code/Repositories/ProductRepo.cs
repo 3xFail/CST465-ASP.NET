@@ -113,7 +113,46 @@ namespace ASP.Net_Project.Code.Repositories
 
         public void Remove(int id)
         {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Aura"].ConnectionString))
+            {
+                ProductRepo inventory = new ProductRepo();
+                List<Product> list = inventory.GetList();
 
+                foreach (Product i in list)
+                {
+                    if (i.CategoryID == id)
+                    {
+                        inventory.Remove(i.ID);
+                    }
+                }
+
+
+                SqlCommand com = new SqlCommand();
+                com.Connection = con;
+                com.CommandType = System.Data.CommandType.Text;
+                com.CommandText = "DELETE FROM Category WHERE ID=@ID";
+                com.Parameters.AddWithValue("@ID", id);
+                com.Connection.Open();
+
+                try
+                {
+                    if (com.ExecuteNonQuery() != 1)
+                    {
+                        //return value is the number of rows affected which should be one
+                        throw new Exception("Remove Product Error");
+                    }
+                    //otherwise executed as expected
+                }
+                catch
+                {
+                    
+                }
+                finally
+                {
+                    com.Connection.Close();
+                }
+               
+            }
         }
 
     }

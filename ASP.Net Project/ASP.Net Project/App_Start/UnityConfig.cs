@@ -3,6 +3,10 @@ using Microsoft.Practices.Unity;
 using Unity.Mvc5;
 using ASP.NET_Project;
 using ASP.Net_Project.Code.Repositories;
+using ASP.Net_Project.Controllers;
+using Microsoft.AspNet.Identity;
+using System.Data.Entity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ASP.Net_Project
 {

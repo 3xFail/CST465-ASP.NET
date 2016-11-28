@@ -46,6 +46,7 @@ namespace ASP.Net_Project.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Category Cat)
         {
@@ -60,6 +61,7 @@ namespace ASP.Net_Project.Controllers
             }
 
         }
+        [Authorize]
         public ActionResult Delete(Category Cat)
         {
             cat_repo.Remove(Cat.ID);

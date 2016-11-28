@@ -1,7 +1,60 @@
-﻿
-@{
-    ViewBag.Title = "Product";
-}
+﻿@model Product
 
-<h2>Product</h2>
+<br />
+<div>
+    @*<div class="uxProductID">
+        @Html.LabelFor(m => m.ID)
+        @Html.EditorFor(m => m.ID)
+        <br />
+    </div>*@
+    <div class="uxProdcutCode">
+        @Html.LabelFor(m => m.ProductCode)
+        @Html.EditorFor(m => m.ProductCode)
+        @Html.ValidationMessageFor(m => m.ProductCode)
+        <br />
+    </div>
+    <div class="uxProdcutName">
+        @Html.LabelFor(m => m.ProductName)
+        @Html.EditorFor(m => m.ProductName)
+        @Html.ValidationMessageFor(m => m.ProductName)
+        <br />
+    </div>
+    <div class="uxProductDescription">
+        @Html.LabelFor(m => m.ProductDescription)
+        @Html.EditorFor(m => m.ProductDescription)
+        @Html.ValidationMessageFor(m => m.ProductDescription)
+        <br />
+    </div>
+
+    <div class="uxPrice">
+        @Html.LabelFor(m => m.Price)
+        @Html.EditorFor(m => m.Price)
+        @Html.ValidationMessageFor(m => m.Price)
+        <br />
+    </div>
+
+    <div class="uxQuantity">
+        @Html.LabelFor(m => m.Quantity) 
+        @Html.EditorFor(m => m.Quantity)
+        @Html.ValidationMessageFor(m => m.Quantity)
+        <br />
+    </div>
+
+    <div class="uxCategory">
+        @Html.LabelFor(m => m.CategoryID)
+        @Html.DropDownListFor(m => m.CategoryID, new SelectList(new CategoryRepo().GetList(), "ID", "CatagoryName"))
+        @Html.ValidationMessageFor(m => m.CategoryID)
+        <br />
+    </div>
+    <div class="uxProductImage">
+        <p>Add a picture</p>
+        <br />
+        <input type="file" id="inputimage" name="img"/>
+        @{ 
+            @HtmlDocument.getElementById("inputimage");
+            Model.ProductImage = File.ReadAllBytes();
+        }
+    </div>
+</div>
+
 

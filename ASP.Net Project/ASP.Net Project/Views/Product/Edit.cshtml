@@ -1,7 +1,15 @@
-﻿
+﻿@model Product
 @{
     ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Edit Product</h2>
 
+@using (Html.BeginForm("Edit", "Product", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.EditorForModel()
+    <input type="submit" value="Edit Product" />
+}

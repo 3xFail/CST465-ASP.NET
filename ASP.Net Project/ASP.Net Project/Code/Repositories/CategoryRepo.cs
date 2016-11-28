@@ -79,15 +79,13 @@ namespace ASP.Net_Project
                     }
                     else
                     {
-                        //needs to insert
                         command.CommandText = "EXECUTE Cat_Add @CategoryName";
-
                     }
 
                     command.Parameters.AddWithValue("@CategoryName", entity.CatagoryName);
                     command.Connection.Open();
                     command.ExecuteNonQuery();
-                    //command.Connection.Close();
+                    command.Connection.Close();
                 }
             }
         }
@@ -95,6 +93,33 @@ namespace ASP.Net_Project
         public void Remove(int ID)
         {
 
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Aura"].ConnectionString))
+            {
+                SqlCommand com = new SqlCommand();
+                com.Connection = con;
+                com.CommandType = System.Data.CommandType.Text;
+                com.CommandText = "DELETE FROM Category WHERE ID=@ID";
+                com.Parameters.AddWithValue("@ID", ID);
+                com.Connection.Open();
+
+                try
+                {
+                    if (com.ExecuteNonQuery() != 1)
+                    {
+                        //return value is the number of rows affected which should be one
+                        throw new Exception("Remove Product Error");
+                    }
+                    //otherwise executed as expected
+                }
+                catch
+                {
+
+                }
+                finally
+                {
+                    com.Connection.Close();
+                }
+            }
         }
 
     }
