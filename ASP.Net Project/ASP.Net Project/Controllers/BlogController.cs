@@ -55,20 +55,24 @@ namespace ASP.Net_Project.Controllers
 
         public ActionResult Edit(int id)
         {
-            BlogPostModel bpm = new BlogPostModel();
-            BlogPost bp = blog_repo.Get(id);
+            if (User.Identity.IsAuthenticated)
+            {
+                BlogPostModel bpm = new BlogPostModel();
+                BlogPost bp = blog_repo.Get(id);
 
-            bpm.ID = bp.ID;
-            bpm.Title = bp.Title;
-            bpm.Author = bp.Author;
-            bpm.Content = bp.Content;
+                bpm.ID = bp.ID;
+                bpm.Title = bp.Title;
+                bpm.Author = bp.Author;
+                bpm.Content = bp.Content;
 
-            return View(bpm); 
+                return View(bpm);
+            }
+            return View();
         }
         [HttpPost]
         public ActionResult Edit(BlogPostModel model)
         {
-            if(ModelState.IsValid)
+            if(ModelState.IsValid && User.Identity.IsAuthenticated)
             {
                 BlogPost bp = new BlogPost();
                 bp.ID = model.ID;

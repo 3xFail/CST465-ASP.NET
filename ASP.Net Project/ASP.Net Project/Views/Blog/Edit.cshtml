@@ -5,8 +5,17 @@
 }
 <h1>Edit a Blog Post</h1>
 
-@using (Html.BeginForm())
+@if (User.Identity.IsAuthenticated)
 {
+    using (Html.BeginForm())
+    {
     @Html.EditorForModel()
     <button type="submit">Submit</button>
+    }
+}
+@if(!User.Identity.IsAuthenticated)
+{
+     <div>
+         Please Login
+     </div>
 }

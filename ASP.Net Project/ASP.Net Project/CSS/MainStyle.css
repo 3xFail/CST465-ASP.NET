@@ -64,7 +64,7 @@ header,footer{
     nav ul li{
         display: block;
         box-sizing:border-box;
-        width: 25%;
+        width: 16.666%;
         float:left;
     }
 

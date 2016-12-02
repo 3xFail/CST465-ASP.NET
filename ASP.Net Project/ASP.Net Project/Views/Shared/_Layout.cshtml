@@ -13,6 +13,24 @@
             <img id="header_img" src="~/img/headerimage.jpg"/>
             <h1>The Janitors Pocket</h1>
             <h2>It's not illegal if we dont get caught ;)</h2>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div>
+                    Welcome @User.Identity.Name
+                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logoutForm" }))
+                {
+                        @Html.AntiForgeryToken()
+                        <a href="Logout" onclick="document.getElementById('logoutForm').submit(); return false;">Logout</a>
+                    }
+                </div>
+            }
+            else
+            {
+                <div>
+                    Welcome Anonymous! @Html.ActionLink("Login", "Login", "Account", null, new { style = "text-decoration:none" })
+                </div>
+            }
         </div>   
         @RenderSection("header", required:false)
     </header>
@@ -29,6 +47,12 @@
             </li>
             <li>
                 @Html.ActionLink("Blogs", "Index", "Blog", null, new { style = "text-decoration:inherit;" })
+            </li>
+            <li>
+                @Html.ActionLink("Catalog", "Index", "Products", null, new { style = "text-decoration:inherit;" })
+            </li>
+            <li>
+                @Html.ActionLink("Categoies", "Index", "Category", null, new { style = "text-decoration:inherit;" })
             </li>
         </ul>
     </nav>
