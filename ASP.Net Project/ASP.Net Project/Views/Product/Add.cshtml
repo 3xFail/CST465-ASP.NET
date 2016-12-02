@@ -1,7 +1,14 @@
-﻿
+﻿@model Product
 @{
     ViewBag.Title = "Add";
 }
 
-<h2>Add</h2>
+<h2>Add Product</h2>
 
+@using (Html.BeginForm("Add", "Product", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.EditorForModel()
+    <input type="submit" value="Add Product"/>
+}

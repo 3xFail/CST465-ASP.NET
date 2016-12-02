@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+
 namespace ASP.Net_Project
 {
+    
     public class Product: IProductEntity
     {
         public int ID { get; set; }

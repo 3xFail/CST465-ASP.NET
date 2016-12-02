@@ -1,7 +1,56 @@
-﻿
+﻿@model List<Category>
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Categories</h2>
+
+@if(Model.Count != 0)
+{
+    foreach (Category i in Model)
+    {
+        <div style="display:inline">
+            
+            @using (Html.BeginForm("Edit", "Category", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationMessage(Model.Find(c => c == i).CatagoryName);
+                @Html.HiddenFor(Model => Model.Find(c => c == i).ID);
+                @Html.EditorFor(Model => Model.Find(c => c == i).CatagoryName);
+
+                <input type="submit" value="Edit Category"/>
+                <input type="button" value="Delete Category" onclick="location.href='@Url.Action("Delete", Model.Find(c => c == i))'" />
+            }
+            
+        </div>
+    }
+
+    <div>
+        @using (Html.BeginForm("SaveCat", "Category", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.TextBox("CategoryName")
+            <input type="submit" value="Add Category" />
+            <br />
+        }
+
+    </div>
+}
+else
+{
+    //add a catrgory
+    <div>
+        <div>
+            @using (Html.BeginForm("SaveCat", "Category", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.TextBox("CategoryName")
+                <input type="submit" value="Add Category"/>
+                <br/>
+            }
+
+        </div>
+    </div>
+}
 

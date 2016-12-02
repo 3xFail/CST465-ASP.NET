@@ -1,7 +1,52 @@
-﻿
+﻿@model Product
 @{
     ViewBag.Title = "Item";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Item</h2>
 
+<br/>
+<div>
+    <div class="uxProductID">
+        <h3>@Html.LabelFor(m => m.ID)</h3>
+        @Html.DisplayFor(m => m.ID) 
+        <br />
+    </div>
+    <div class="uxProdcutCode">
+        <h3>@Html.LabelFor(m => m.ProductCode)</h3>
+        @Html.DisplayFor(m => m.ProductCode) 
+        <br />
+    </div>
+    <div class="uxProdcutName">
+        <h3>@Html.LabelFor(m => m.ProductName)</h3>
+        @Html.DisplayFor(m => m.ProductName) 
+        <br />
+    </div>
+    <div class="uxProductDescription">
+        <h3>@Html.LabelFor(m => m.ProductDescription)</h3>
+        @Html.DisplayFor(m => m.ProductDescription) 
+        <br />
+    </div>
+
+    <div class="uxPrice">
+        <h3> @Html.LabelFor(m => m.Price)</h3>
+        @Html.DisplayFor(m => m.Price) 
+        <br />
+    </div>
+
+    <div class="uxQuantity">
+        <h3>@Html.LabelFor(m => m.Quantity) </h3>
+        @Html.DisplayFor(m => m.Quantity) 
+        <br />
+    </div>
+
+    <div class="uxCategory">
+        <h3>@Html.LabelFor(m => m.CategoryID) </h3>
+        @Html.DisplayFor(m => Model.CategoryID)
+        <br/>
+    </div>
+    <div class="uxProductImage">
+
+        <br/>
+    </div>
+</div>
