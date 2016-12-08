@@ -13,6 +13,7 @@ namespace ASP.Net_Project.Controllers
     public class ProductController : Controller
     {
         private IProductRepo<Product> prod_repo;
+        private ICategoryRepo<Category> cat_repo = new CategoryRepo();
 
         public ProductController()
         {
@@ -43,7 +44,39 @@ namespace ASP.Net_Project.Controllers
         {
             if (ModelState.IsValid)
             {
-                prod_repo.Save(prod);
+                byte[] image;
+                Product product = new Product();
+                product.ID = prod.ID;
+                product.CategoryID = prod.CategoryID;
+                product.Price = prod.Price;
+                product.ProductCode = prod.ProductCode;
+                product.ProductDescription = prod.ProductDescription;
+                product.ProductName = prod.ProductName;
+                product.Quantity = prod.Quantity;
+
+                if (prod.ProductImage != null)
+                {
+
+                    WebCache.Remove(product.ID + "big");
+                    WebCache.Remove(product.ID + "small");
+
+                    using (MemoryStream mem = new MemoryStream())
+                    {
+                        prod.ProductImage.InputStream.CopyTo(mem);
+                        image = mem.ToArray();
+                    }
+
+                    product.ProductImage = image;
+                    product.ImageFileName = prod.ProductImage.FileName;
+                    product.ImageFileName = prod.ProductImage.ContentType;
+
+
+                }
+                else
+                {
+                    product.ProductImage = null;
+                }
+                prod_repo.Save(product);
                 return RedirectToAction("Index");
             }
             else
@@ -55,7 +88,7 @@ namespace ASP.Net_Project.Controllers
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Product prod)
+        public ActionResult Edit(ProductModel prod)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +125,7 @@ namespace ASP.Net_Project.Controllers
                     product.ProductImage = null;
                 }
 
-                prod_repo.Save(prod);
+                prod_repo.Save(product);
 
             }
             else
@@ -116,7 +149,7 @@ namespace ASP.Net_Project.Controllers
                 product.ProductDescription = prod.ProductDescription;
                 product.ProductName = prod.ProductName;
                 product.Quantity = prod.Quantity;
-                product.Categories = new SelectList(new CategoryRepo.GetList(), "ID", "CategoryName");
+                product.Categories = new SelectList(cat_repo.GetList());
 
                 return View(product);
             }
@@ -177,7 +210,7 @@ namespace ASP.Net_Project.Controllers
         public ActionResult Add()
         {
             ProductModel mod = new ProductModel();
-            mod.Categories = new SelectList(new CategoryRepo.GetList(), "ID", "CategoryName");
+            mod.Categories = new SelectList(cat_repo.GetList());
             return View();
         }
 

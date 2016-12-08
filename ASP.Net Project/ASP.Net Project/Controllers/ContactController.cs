@@ -13,5 +13,19 @@ namespace ASP.Net_Project.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Submission(ContactModel mod)
+        {
+            if (ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", mod);
+            }
+
+        }
     }
 }

@@ -293,6 +293,8 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\Item.cshtml" />
     <Content Include="Views\Product\EditorTemplates\Product.cshtml" />
+    <Content Include="Views\Contact\Submission.cshtml" />
+    <Content Include="Views\Shared\_Inventory.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -336,6 +338,8 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Models\Account\AccountViewModels.cs" />
     <Compile Include="Models\Account\ForgotPasswordViewModel.cs" />
+    <Compile Include="Models\Contact\ContactModel.cs" />
+    <Compile Include="Models\Home\HomePageContent.cs" />
     <Compile Include="Models\Identity\ApplicationDBContext.cs" />
     <Compile Include="Models\Identity\ApplicationRole.cs" />
     <Compile Include="Models\Identity\ApplicationUser.cs" />

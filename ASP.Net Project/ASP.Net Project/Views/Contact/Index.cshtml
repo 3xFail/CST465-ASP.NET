@@ -1,6 +1,45 @@
-﻿@{
+﻿@model ContactModel
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Contact";
 }
 
 <h1>Contact</h1>
+
+<div>Phone Number: 777-777-7777</div>
+<div>Address: 3201 Campus Drive, Bovin Hall Room 152, Klamath Falls OR, 97601</div>
+<br/>
+
+<h2>Need to contact us?</h2>
+@using (Html.BeginForm("Submission", "Contact", FormMethod.Post))
+{
+    @Html.AntiForgeryToken();
+
+    <div>
+        @Html.LabelFor(Model => Model.Name)
+        <br/>
+        @Html.TextBoxFor(Model => Model.Name)
+        <br />
+        @Html.ValidationMessageFor(Model => Model.Name)
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.Phone_Number)
+        <br />
+        @Html.TextBoxFor(Model => Model.Phone_Number)
+        <br />
+        @Html.ValidationMessageFor(Model => Model.Phone_Number)
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.Comment)
+        <br />
+        @Html.TextAreaFor(Model => Model.Comment)
+        <br />
+        @Html.ValidationMessageFor(Model => Model.Comment)
+    </div>
+
+
+    <button type="submit">Is that all?</button>
+}
+

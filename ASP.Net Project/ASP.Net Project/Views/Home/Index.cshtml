@@ -1,4 +1,5 @@
-﻿@{
+﻿@model HomePageContent
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "The Janitors Pocket";
     
@@ -15,3 +16,7 @@
 
 <h1>Home</h1>
 
+<h2>Check out the Blog!</h2>
+@Html.Partial("_BlogPostLinkList", Model.BlogList)
+<h2>The goods ;)</h2>
+@Html.Partial("_Inventory", Model.ProductList)
