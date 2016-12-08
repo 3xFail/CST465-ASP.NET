@@ -292,7 +292,6 @@
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\Item.cshtml" />
-    <Content Include="Views\Product\DisplayTemplates\ProductImage.cshtml" />
     <Content Include="Views\Product\EditorTemplates\Product.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -343,6 +342,7 @@
     <Compile Include="Models\Account\LoginViewModel.cs" />
     <Compile Include="Models\Account\RegisterViewModel.cs" />
     <Compile Include="Models\Account\ResetPasswordViewModel.cs" />
+    <Compile Include="Models\Product\ProductModel.cs" />
     <Compile Include="Models\Test\LongAnswerQuestion.cs" />
     <Compile Include="Models\Test\MultipleChoiceQuestion.cs" />
     <Compile Include="Models\Test\ShortAnswerQuestion.cs" />

@@ -98,7 +98,7 @@ namespace ASP.Net_Project
                 SqlCommand com = new SqlCommand();
                 com.Connection = con;
                 com.CommandType = System.Data.CommandType.Text;
-                com.CommandText = "DELETE FROM Category WHERE ID=@ID";
+                com.CommandText = "DELETE FROM Product WHERE CategoryID=@ID";
                 com.Parameters.AddWithValue("@ID", ID);
                 com.Connection.Open();
 
@@ -109,6 +109,9 @@ namespace ASP.Net_Project
                         //return value is the number of rows affected which should be one
                         throw new Exception("Remove Product Error");
                     }
+
+                    com.CommandText = "DELETE FROM Category WHERE ID=@ID";
+                    com.ExecuteNonQuery();
                     //otherwise executed as expected
                 }
                 catch

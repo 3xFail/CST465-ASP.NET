@@ -18,5 +18,8 @@ namespace ASP.Net_Project
         public double Price { get; set; }
         public int Quantity { get; set; }
 
+        public string ImageContentType { get; set; }
+        public string ImageFileName { get; set; }
+
     }
 }
